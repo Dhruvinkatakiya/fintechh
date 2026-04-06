@@ -139,7 +139,7 @@ export default function SignupPage() {
       <div className="w-full max-w-md">
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="inline-block mb-4 p-4 rounded-full" style={{
+          {/* <div className="inline-block mb-4 p-4 rounded-full" style={{
             background: 'linear-gradient(135deg, var(--brand-green-light), var(--brand-green))',
             boxShadow: `
               0 10px 30px rgba(52, 199, 89, 0.4),
@@ -150,7 +150,7 @@ export default function SignupPage() {
             <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
               <path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM15.657 14.243a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM11 17a1 1 0 102 0v-1a1 1 0 10-2 0v1zM5.757 15.657a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM3 10a1 1 0 01 1 1h1a1 1 0 110-2H4a1 1 0 00-1 1zM5.757 5.757a1 1 0 000-1.414L5.05 3.636a1 1 0 10-1.414 1.414l.707.707z"></path>
             </svg>
-          </div>
+          </div> */}
           <h1 className="text-4xl font-bold mb-2" style={{
             background: 'linear-gradient(to right, var(--brand-green), var(--brand-green-dark))',
             WebkitBackgroundClip: 'text',

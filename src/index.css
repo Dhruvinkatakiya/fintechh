@@ -871,25 +871,3 @@ tbody tr:hover {
 .stagger > *:nth-child(6) { animation-delay: 300ms; }
 .stagger > *:nth-child(7) { animation-delay: 360ms; }
 .stagger > *:nth-child(8) { animation-delay: 420ms; }
-
-/* Small pop animation used for logout avatar/logo */
-@keyframes pop {
-  0% { transform: scale(1); }
-  35% { transform: scale(1.12); }
-  60% { transform: scale(0.98); }
-  100% { transform: scale(1); }
-}
-
-.pop {
-  animation: pop 350ms cubic-bezier(0.2, 0.9, 0.3, 1) both;
-}
-
-/* Toast for logout - subtle pop + border */
-.toast-logout {
-  border-radius: 12px !important;
-  padding: 12px 16px !important;
-  background: linear-gradient(180deg, var(--bg-secondary), var(--surface-primary)) !important;
-  color: var(--text-primary) !important;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
-  border: 1px solid var(--border-color) !important;
-}

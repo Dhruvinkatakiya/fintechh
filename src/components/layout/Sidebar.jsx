@@ -1,4 +1,4 @@
-import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import {
   LayoutDashboard,
   ArrowRightLeft,
@@ -10,14 +10,9 @@ import {
   Shield,
   Eye,
   ChevronDown,
-  LogOut,
 } from 'lucide-react';
 import { useAppStore } from '../../store';
 import { ROLES } from '../../constants';
-import { useState, useRef } from 'react';
-import toast from 'react-hot-toast';
-import { logout } from '../../utils/auth';
-import LogoutModal from '../ui/LogoutModal';
 
 const navItems = [
   { to: '/', icon: LayoutDashboard, label: 'Dashboard' },
@@ -34,9 +29,6 @@ const themeOptions = [
 export default function Sidebar() {
   const { sidebarOpen, closeSidebar, role, setRole, theme, setTheme } = useAppStore();
   const location = useLocation();
-  const navigate = useNavigate();
-  const [showLogoutModal, setShowLogoutModal] = useState(false);
-  const logoRef = useRef(null);
 
   return (
     <>
@@ -63,9 +55,8 @@ export default function Sidebar() {
         <div className="flex items-center justify-between px-6 h-[72px]">
           <div className="flex items-center gap-4">
             <div
-                ref={logoRef}
-                className="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold text-lg transition-transform"
-                style={{ background: 'var(--gradient-primary)' }}
+              className="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold text-lg"
+              style={{ background: 'var(--gradient-primary)' }}
             >
               F
             </div>
@@ -193,38 +184,8 @@ export default function Sidebar() {
               </button>
             </div>
           </div>
-
-          {/* Sign out */}
-          <div>
-            <button
-              onClick={() => setShowLogoutModal(true)}
-              className="w-full flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium transition-all duration-200"
-              style={{ color: 'var(--text-secondary)' }}
-            >
-              <LogOut size={18} />
-              Sign Out
-            </button>
-          </div>
         </div>
       </aside>
-      {showLogoutModal && (
-        <LogoutModal
-          open={showLogoutModal}
-          onClose={() => setShowLogoutModal(false)}
-          onConfirm={() => {
-            setShowLogoutModal(false);
-            // small logo pop
-            if (logoRef.current) {
-              logoRef.current.classList.add('pop');
-              setTimeout(() => logoRef.current && logoRef.current.classList.remove('pop'), 350);
-            }
-            closeSidebar();
-            logout();
-            toast.success('Signed out');
-            navigate('/login', { replace: true });
-          }}
-        />
-      )}
     </>
   );
 }

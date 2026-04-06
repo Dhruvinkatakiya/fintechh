@@ -87,7 +87,7 @@ export default function LoginPage() {
       <div className="w-full max-w-md">
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="inline-block mb-4 p-4 rounded-full" style={{
+          {/* <div className="inline-block mb-4 p-4 rounded-full" style={{
             background: 'linear-gradient(135deg, var(--brand-blue-light), var(--brand-blue))',
             boxShadow: `
               0 10px 30px rgba(90, 200, 250, 0.4),
@@ -98,7 +98,7 @@ export default function LoginPage() {
             <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
               <path d="M10 2a8 8 0 100 16 8 8 0 000-16z"></path>
             </svg>
-          </div>
+          </div> */}
           <h1 className="text-4xl font-bold" style={{
             color: 'var(--text-primary)',
             background: 'linear-gradient(to right, var(--brand-blue), var(--brand-blue-dark))',
