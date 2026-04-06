@@ -133,70 +133,112 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100 p-4">
+    <div className="min-h-screen flex items-center justify-center p-4 overflow-y-auto py-8" style={{
+      background: 'linear-gradient(135deg, #F5F5F7 0%, #E8E8ED 100%)',
+    }}>
       <div className="w-full max-w-md">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-slate-900 mb-2">Join fintechh</h1>
-          <p className="text-slate-600">Create your account to get started</p>
+          <div className="inline-block mb-4 p-4 rounded-full" style={{
+            background: 'linear-gradient(135deg, var(--brand-green-light), var(--brand-green))',
+            boxShadow: `
+              0 10px 30px rgba(52, 199, 89, 0.4),
+              inset -2px -2px 8px rgba(255, 255, 255, 0.8),
+              inset 2px 2px 8px rgba(0, 0, 0, 0.1)
+            `
+          }}>
+            <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM15.657 14.243a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM11 17a1 1 0 102 0v-1a1 1 0 10-2 0v1zM5.757 15.657a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM3 10a1 1 0 01 1 1h1a1 1 0 110-2H4a1 1 0 00-1 1zM5.757 5.757a1 1 0 000-1.414L5.05 3.636a1 1 0 10-1.414 1.414l.707.707z"></path>
+            </svg>
+          </div>
+          <h1 className="text-4xl font-bold mb-2" style={{
+            background: 'linear-gradient(to right, var(--brand-green), var(--brand-green-dark))',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+          }}>Join FinVault</h1>
+          <p style={{ color: 'var(--text-secondary)', fontWeight: '500' }}>Create your account to get started</p>
         </div>
 
         {/* Card */}
-        <div className="bg-white rounded-lg shadow-lg p-8 space-y-6">
+        <div className="rounded-3xl p-8 space-y-6 glossy-overlay" style={{
+          background: 'linear-gradient(135deg, #FFFFFF 0%, #F5F5F7 100%)',
+          boxShadow: `
+            0 20px 60px rgba(0, 0, 0, 0.12),
+            0 8px 24px rgba(0, 0, 0, 0.08),
+            inset -1px -1px 2px rgba(255, 255, 255, 0.9),
+            inset 1px 1px 2px rgba(0, 0, 0, 0.05)
+          `
+        }}>
           {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-6">
             {/* Name Input */}
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
+              <label htmlFor="name" className="block text-sm font-semibold mb-2.5" style={{ color: 'var(--text-primary)' }}>
                 Full Name
               </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="John Doe"
-                className={`w-full px-4 py-2.5 rounded-lg border-2 transition-colors bg-slate-50 placeholder-slate-400 text-slate-900 focus:outline-none focus:ring-0 ${
-                  errors.name
-                    ? 'border-red-500 focus:bg-red-50'
-                    : 'border-slate-200 focus:border-purple-500 focus:bg-white'
-                }`}
-              />
+              <div style={{
+                background: 'linear-gradient(135deg, #F1F5F9 0%, #E2E8F0 100%)',
+                boxShadow: 'inset 0 4px 12px rgba(0, 0, 0, 0.08), inset 0 -2px 4px rgba(255, 255, 255, 0.6)',
+                borderRadius: '12px'
+              }}>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="John Doe"
+                  className={`w-full px-4 py-3 rounded-lg bg-transparent focus:outline-none transition-all duration-200`}
+                  style={{
+                    color: 'var(--text-primary)',
+                  }}
+                />
+              </div>
               {errors.name && (
-                <p className="mt-1.5 text-sm text-red-600">{errors.name}</p>
+                <p className="mt-2 text-xs font-medium" style={{ color: 'var(--brand-red)' }}>{errors.name}</p>
               )}
             </div>
 
             {/* Email Input */}
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
+              <label htmlFor="email" className="block text-sm font-semibold mb-2.5" style={{ color: 'var(--text-primary)' }}>
                 Email Address
               </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="you@example.com"
-                className={`w-full px-4 py-2.5 rounded-lg border-2 transition-colors bg-slate-50 placeholder-slate-400 text-slate-900 focus:outline-none focus:ring-0 ${
-                  errors.email
-                    ? 'border-red-500 focus:bg-red-50'
-                    : 'border-slate-200 focus:border-purple-500 focus:bg-white'
-                }`}
-              />
+              <div style={{
+                background: 'linear-gradient(135deg, #F1F5F9 0%, #E2E8F0 100%)',
+                boxShadow: 'inset 0 4px 12px rgba(0, 0, 0, 0.08), inset 0 -2px 4px rgba(255, 255, 255, 0.6)',
+                borderRadius: '12px'
+              }}>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="you@example.com"
+                  className={`w-full px-4 py-3 rounded-lg bg-transparent focus:outline-none transition-all duration-200`}
+                  style={{
+                    color: 'var(--text-primary)',
+                  }}
+                />
+              </div>
               {errors.email && (
-                <p className="mt-1.5 text-sm text-red-600">{errors.email}</p>
+                <p className="mt-2 text-xs font-medium" style={{ color: 'var(--brand-red)' }}>{errors.email}</p>
               )}
             </div>
 
             {/* Password Input */}
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-slate-700 mb-2">
+              <label htmlFor="password" className="block text-sm font-semibold mb-2.5" style={{ color: 'var(--text-primary)' }}>
                 Password
               </label>
-              <div className="relative mb-3">
+              <div style={{
+                background: 'linear-gradient(135deg, #F1F5F9 0%, #E2E8F0 100%)',
+                boxShadow: 'inset 0 4px 12px rgba(0, 0, 0, 0.08), inset 0 -2px 4px rgba(255, 255, 255, 0.6)',
+                borderRadius: '12px',
+                position: 'relative'
+              }}>
                 <input
                   type={showPassword ? 'text' : 'password'}
                   id="password"
@@ -204,34 +246,49 @@ export default function SignupPage() {
                   value={formData.password}
                   onChange={handleChange}
                   placeholder="••••••••"
-                  className={`w-full px-4 py-2.5 rounded-lg border-2 transition-colors bg-slate-50 placeholder-slate-400 text-slate-900 focus:outline-none focus:ring-0 pr-12 ${
-                    errors.password
-                      ? 'border-red-500 focus:bg-red-50'
-                      : 'border-slate-200 focus:border-purple-500 focus:bg-white'
-                  }`}
+                  className="w-full px-4 py-3 rounded-lg bg-transparent focus:outline-none transition-all duration-200 pr-12"
+                  style={{
+                    color: 'var(--text-primary)',
+                  }}
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-500 hover:text-slate-700 transition-colors"
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 transition-all p-1.5 hover:bg-white/50 rounded-lg"
+                  style={{
+                    color: 'var(--text-secondary)',
+                  }}
                 >
                   {showPassword ? (
-                    <EyeOff size={20} />
+                    <EyeOff size={18} />
                   ) : (
-                    <Eye size={20} />
+                    <Eye size={18} />
                   )}
                 </button>
               </div>
 
               {/* Password Strength Indicator */}
               {formData.password && (
-                <div className="space-y-2">
+                <div className="space-y-2 mt-3">
                   <div className="flex items-center gap-2">
-                    <div className="flex-1 h-2 bg-slate-200 rounded-full overflow-hidden">
+                    <div className="flex-1 h-2 rounded-full overflow-hidden" style={{
+                      background: 'linear-gradient(90deg, #e2e8f0 0%, #cbd5e1 100%)'
+                    }}>
                       <div
-                        className={`h-full transition-all duration-300 ${passwordStrength.color}`}
+                        className="h-full transition-all duration-300 rounded-full"
                         style={{
                           width: `${(passwordStrength.score / 6) * 100}%`,
+                          background: `linear-gradient(90deg, ${
+                            passwordStrength.score <= 2 ? '#ef4444' :
+                            passwordStrength.score <= 3 ? '#f59e0b' :
+                            passwordStrength.score <= 4 ? '#eab308' :
+                            '#22c55e'
+                          }, ${
+                            passwordStrength.score <= 2 ? '#dc2626' :
+                            passwordStrength.score <= 3 ? '#d97706' :
+                            passwordStrength.score <= 4 ? '#ca8a04' :
+                            '#16a34a'
+                          })`
                         }}
                       ></div>
                     </div>
@@ -240,37 +297,35 @@ export default function SignupPage() {
                     </span>
                   </div>
 
-                  {/* Password Feedback */}
                   {passwordStrength.feedback.length > 0 && (
                     <div className="space-y-1">
-                      {passwordStrength.feedback.map((tip, index) => (
-                        <div key={index} className="flex items-center gap-2 text-xs text-slate-600">
-                          <X size={14} className="text-red-500" />
+                      {passwordStrength.feedback.slice(0, 2).map((tip, index) => (
+                          <div key={index} className="flex items-center gap-2 text-xs" style={{ color: 'var(--text-secondary)' }}>
+                          <X size={12} style={{ color: 'var(--brand-red)' }} />
                           {tip}
                         </div>
                       ))}
-                    </div>
-                  )}
-                  {passwordStrength.score === 6 && (
-                    <div className="flex items-center gap-2 text-xs text-emerald-600">
-                      <Check size={14} />
-                      Great password strength!
                     </div>
                   )}
                 </div>
               )}
 
               {errors.password && (
-                <p className="mt-1.5 text-sm text-red-600">{errors.password}</p>
+                <p className="mt-2 text-xs font-medium" style={{ color: 'var(--brand-red)' }}>{errors.password}</p>
               )}
             </div>
 
             {/* Confirm Password Input */}
             <div>
-              <label htmlFor="confirmPassword" className="block text-sm font-medium text-slate-700 mb-2">
+              <label htmlFor="confirmPassword" className="block text-sm font-semibold mb-2.5" style={{ color: 'var(--text-primary)' }}>
                 Confirm Password
               </label>
-              <div className="relative">
+              <div style={{
+                background: 'linear-gradient(135deg, #F1F5F9 0%, #E2E8F0 100%)',
+                boxShadow: 'inset 0 4px 12px rgba(0, 0, 0, 0.08), inset 0 -2px 4px rgba(255, 255, 255, 0.6)',
+                borderRadius: '12px',
+                position: 'relative'
+              }}>
                 <input
                   type={showConfirmPassword ? 'text' : 'password'}
                   id="confirmPassword"
@@ -278,26 +333,28 @@ export default function SignupPage() {
                   value={formData.confirmPassword}
                   onChange={handleChange}
                   placeholder="••••••••"
-                  className={`w-full px-4 py-2.5 rounded-lg border-2 transition-colors bg-slate-50 placeholder-slate-400 text-slate-900 focus:outline-none focus:ring-0 pr-12 ${
-                    errors.confirmPassword
-                      ? 'border-red-500 focus:bg-red-50'
-                      : 'border-slate-200 focus:border-purple-500 focus:bg-white'
-                  }`}
+                  className="w-full px-4 py-3 rounded-lg bg-transparent focus:outline-none transition-all duration-200 pr-12"
+                  style={{
+                    color: 'var(--text-primary)',
+                  }}
                 />
                 <button
                   type="button"
                   onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-500 hover:text-slate-700 transition-colors"
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 transition-all p-1.5 hover:bg-white/50 rounded-lg"
+                  style={{
+                    color: 'var(--text-secondary)',
+                  }}
                 >
                   {showConfirmPassword ? (
-                    <EyeOff size={20} />
+                    <EyeOff size={18} />
                   ) : (
-                    <Eye size={20} />
+                    <Eye size={18} />
                   )}
                 </button>
               </div>
               {errors.confirmPassword && (
-                <p className="mt-1.5 text-sm text-red-600">{errors.confirmPassword}</p>
+                <p className="mt-2 text-xs font-medium" style={{ color: 'var(--brand-red)' }}>{errors.confirmPassword}</p>
               )}
             </div>
 
@@ -305,39 +362,65 @@ export default function SignupPage() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 disabled:from-slate-400 disabled:to-slate-400 text-white font-semibold py-2.5 rounded-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]"
+              className="w-full font-semibold py-3 rounded-xl text-white transition-all duration-200 transform relative cursor-pointer mt-8"
+              style={{
+                background: isLoading
+                  ? 'linear-gradient(135deg, var(--text-tertiary) 0%, var(--text-secondary) 100%)'
+                  : 'linear-gradient(135deg, var(--brand-green), var(--brand-green-dark))',
+                boxShadow: isLoading
+                  ? 'inset 0 2px 4px rgba(0, 0, 0, 0.1)'
+                  : '0 8px 20px rgba(52, 199, 89, 0.3), 0 4px 8px rgba(36, 138, 61, 0.2)',
+                transform: isLoading ? 'scale(0.98)' : 'scale(1)'
+              }}
+              onMouseDown={(e) => !isLoading && (e.currentTarget.style.boxShadow = 'inset 0 4px 12px rgba(0, 0, 0, 0.15)')}
+              onMouseUp={(e) => !isLoading && (e.currentTarget.style.boxShadow = '0 8px 20px rgba(52, 199, 89, 0.3), 0 4px 8px rgba(36, 138, 61, 0.2)')}
+              onMouseLeave={(e) => !isLoading && (e.currentTarget.style.boxShadow = '0 8px 20px rgba(52, 199, 89, 0.3), 0 4px 8px rgba(36, 138, 61, 0.2)')}
             >
               {isLoading ? 'Creating Account...' : 'Create Account'}
             </button>
           </form>
 
           {/* Divider */}
-          <div className="relative">
+          <div className="relative py-2">
             <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-slate-200"></div>
+              <div className="w-full" style={{
+                height: '1px',
+                background: 'linear-gradient(90deg, transparent, var(--shadow-dark), transparent)'
+              }}></div>
             </div>
-            <div className="relative flex justify-center text-sm">
-              <span className="px-2 bg-white text-slate-600">Already have an account?</span>
+            <div className="relative flex justify-center text-xs">
+              <span className="px-3 font-medium" style={{
+                background: 'linear-gradient(135deg, #FFFFFF 0%, #F5F5F7 100%)',
+                color: 'var(--text-secondary)'
+              }}>Already a member?</span>
             </div>
           </div>
 
           {/* Sign In Link */}
-          <Link
-            to="/login"
-            className="block w-full text-center bg-slate-100 hover:bg-slate-200 text-slate-900 font-semibold py-2.5 rounded-lg transition-colors"
+          <button
+            onClick={() => navigate('/login')}
+            className="w-full font-semibold py-3 rounded-xl transition-all duration-200"
+            style={{
+              background: 'linear-gradient(135deg, #F1F5F9 0%, #E2E8F0 100%)',
+              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.08), inset 0 -1px 2px rgba(255, 255, 255, 0.6)',
+              color: 'var(--text-primary)'
+            }}
+            onMouseDown={(e) => (e.currentTarget.style.boxShadow = 'inset 0 2px 6px rgba(0, 0, 0, 0.1)')}
+            onMouseUp={(e) => (e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.08), inset 0 -1px 2px rgba(255, 255, 255, 0.6)')}
+            onMouseLeave={(e) => (e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.08), inset 0 -1px 2px rgba(255, 255, 255, 0.6)')}
           >
             Sign In
-          </Link>
+          </button>
         </div>
 
         {/* Terms */}
-        <p className="mt-6 text-center text-xs text-slate-600">
+        <p className="mt-8 text-center text-xs" style={{ color: 'var(--text-secondary)' }}>
           By creating an account, you agree to our{' '}
-          <a href="#" className="text-purple-600 hover:underline">
+          <a href="#" className="font-semibold" style={{ color: 'var(--brand-green)' }}>
             Terms of Service
           </a>{' '}
           and{' '}
-          <a href="#" className="text-purple-600 hover:underline">
+          <a href="#" className="font-semibold" style={{ color: 'var(--brand-green)' }}>
             Privacy Policy
           </a>
         </p>

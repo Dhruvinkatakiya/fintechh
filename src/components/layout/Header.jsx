@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Menu, Bell, LogOut } from 'lucide-react';
 import { useAppStore } from '../../store';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { clearAuthToken } from '../../utils/auth';
+import { logout } from '../../utils/auth';
 import toast from 'react-hot-toast';
+import LogoutModal from '../ui/LogoutModal';
 
 const PAGE_TITLES = {
   '/': 'Dashboard',
@@ -17,12 +18,21 @@ export default function Header() {
   const location = useLocation();
   const navigate = useNavigate();
   const [showUserMenu, setShowUserMenu] = useState(false);
+  const [showLogoutModal, setShowLogoutModal] = useState(false);
+  const avatarRef = useRef(null);
 
   const title = PAGE_TITLES[location.pathname] || 'Dashboard';
 
-  const handleLogout = () => {
-    clearAuthToken();
-    toast.success('Logged out successfully');
+  const performLogout = () => {
+    // small avatar pop animation
+    if (avatarRef.current) {
+      avatarRef.current.classList.add('pop');
+      setTimeout(() => avatarRef.current && avatarRef.current.classList.remove('pop'), 350);
+    }
+
+    // clear auth and redirect
+    logout();
+    toast.success('Signed out');
     navigate('/login', { replace: true });
   };
 
@@ -85,8 +95,9 @@ export default function Header() {
         </button>
 
         {/* Avatar with Dropdown */}
-        <div className="relative">
+          <div className="relative">
           <button
+            ref={avatarRef}
             onClick={() => setShowUserMenu(!showUserMenu)}
             className="w-9 h-9 rounded-xl flex items-center justify-center text-white text-sm font-bold cursor-pointer hover:shadow-lg transition-shadow"
             style={{ background: 'var(--gradient-primary)' }}
@@ -116,7 +127,7 @@ export default function Header() {
               <button
                 onClick={() => {
                   setShowUserMenu(false);
-                  handleLogout();
+                  setShowLogoutModal(true);
                 }}
                 className="w-full flex items-center gap-2 px-4 py-2.5 text-sm font-medium hover:bg-red-500/10 transition-colors"
                 style={{ color: '#ef4444' }}
@@ -136,6 +147,15 @@ export default function Header() {
           )}
         </div>
       </div>
+      
+      <LogoutModal
+        open={showLogoutModal}
+        onClose={() => setShowLogoutModal(false)}
+        onConfirm={() => {
+          setShowLogoutModal(false);
+          performLogout();
+        }}
+      />
     </header>
   );
 }

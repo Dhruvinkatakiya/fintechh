@@ -43,6 +43,188 @@
   --color-success-500: #10b981;
 }
 
+/* ============================================
+   SKEUOMORPHIC COLOR PALETTE
+   ============================================ */
+
+:root {
+  /* Surface & Background Colors */
+  --surface-primary: #F5F5F7;
+  --surface-secondary: #E8E8ED;
+  --surface-tertiary: #FAFAFA;
+  
+  /* Shadow Colors - Depth & Dimensionality */
+  --shadow-dark: #D1D1D6;
+  --shadow-light: #FFFFFF;
+  --shadow-soft: rgba(0, 0, 0, 0.15);
+  
+  /* Brand Colors - Primary */
+  --brand-blue: #007AFF;
+  --brand-blue-light: #5AC8FA;
+  --brand-blue-dark: #0051D5;
+  
+  --brand-green: #34C759;
+  --brand-green-light: #63E584;
+  --brand-green-dark: #248A3D;
+  
+  --brand-orange: #FF9500;
+  --brand-orange-light: #FFB340;
+  --brand-orange-dark: #C87400;
+  
+  --brand-red: #FF3B30;
+  --brand-red-light: #FF6961;
+  --brand-red-dark: #D62518;
+  
+  /* Text Colors - Hierarchy */
+  --text-primary: #1D1D1F;
+  --text-secondary: #86868B;
+  --text-tertiary: #C7C7CC;
+  --text-inverted: #FFFFFF;
+  
+  /* Category Colors - Spending */
+  --category-shopping: #FF2D55;
+  --category-shopping-shadow: #D41043;
+  --category-shopping-light: #FF6482;
+  
+  --category-food: #FF9500;
+  --category-food-shadow: #C87400;
+  --category-food-light: #FFB340;
+  
+  --category-bills: #5856D6;
+  --category-bills-shadow: #3634A3;
+  --category-bills-light: #7D7BE8;
+  
+  --category-entertainment: #AF52DE;
+  --category-entertainment-shadow: #8944AB;
+  --category-entertainment-light: #C77EE8;
+  
+  --category-transport: #007AFF;
+  --category-transport-shadow: #0051D5;
+  --category-transport-light: #5AC8FA;
+  
+  --category-other: #8E8E93;
+  --category-other-shadow: #636366;
+  --category-other-light: #AEAEB2;
+  
+  /* Income/Expense Indicators */
+  --income-color: #34C759;
+  --income-bg: rgba(52, 199, 89, 0.1);
+  --income-border: rgba(52, 199, 89, 0.3);
+  
+  --expense-color: #FF3B30;
+  --expense-bg: rgba(255, 59, 48, 0.1);
+  --expense-border: rgba(255, 59, 48, 0.3);
+  
+  /* Gradient Colors */
+  --gradient-button: linear-gradient(180deg, #FFFFFF 0%, #E8E8ED 100%);
+  --gradient-button-pressed: linear-gradient(180deg, #D1D1D6 0%, #C7C7CC 100%);
+  --gradient-income: linear-gradient(180deg, #34C759 0%, #63E584 100%);
+  --gradient-expense: linear-gradient(180deg, #FF3B30 0%, #FF6961 100%);
+  --gradient-income-chart: linear-gradient(90deg, #34C759, #63E584);
+  --gradient-expense-chart: linear-gradient(90deg, #FF3B30, #FF6961);
+  
+  /* Grid & Chart Colors */
+  --chart-grid: #E5E5EA;
+  --chart-background: #FAFAFA;
+  
+  /* Glass Effects */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --glass-backdrop-blur: blur(10px);
+}
+
+/* Dark Theme Support */
+.dark {
+  /* Surface & Background Colors - Dark Mode */
+  --surface-primary: #2C2C2E;
+  --surface-secondary: #1C1C1E;
+  --surface-tertiary: #3A3A3C;
+  
+  /* Shadow Colors - Dark Mode */
+  --shadow-dark: #1C1C1E;
+  --shadow-light: #3A3A3C;
+  --shadow-soft: rgba(0, 0, 0, 0.3);
+  
+  /* Brand Colors - Dark Mode (Slightly desaturated) */
+  --brand-blue: #0A84FF;
+  --brand-blue-light: #4DB8FF;
+  --brand-blue-dark: #0855D5;
+  
+  --brand-green: #30D158;
+  --brand-green-light: #5FE084;
+  --brand-green-dark: #27A842;
+  
+  --brand-orange: #FF9F0A;
+  --brand-orange-light: #FFB840;
+  --brand-orange-dark: #CC7F08;
+  
+  --brand-red: #FF453A;
+  --brand-red-light: #FF6961;
+  --brand-red-dark: #CC360E;
+  
+  /* Text Colors - Dark Mode */
+  --text-primary: #F5F5F7;
+  --text-secondary: #98989D;
+  --text-tertiary: #48484A;
+  --text-inverted: #1C1C1E;
+  
+  /* Category Colors - Dark Mode */
+  --category-shopping: #FF453A;
+  --category-shopping-shadow: #A62814;
+  --category-shopping-light: #FF6961;
+  
+  --category-food: #FF9F0A;
+  --category-food-shadow: #994D00;
+  --category-food-light: #FFB840;
+  
+  --category-bills: #5E5CE6;
+  --category-bills-shadow: #3D3B8C;
+  --category-bills-light: #8B88F5;
+  
+  --category-entertainment: #BF5AF0;
+  --category-entertainment-shadow: #7034A3;
+  --category-entertainment-light: #D69EFF;
+  
+  --category-transport: #0A84FF;
+  --category-transport-shadow: #0855D5;
+  --category-transport-light: #4DB8FF;
+  
+  --category-other: #7A7A80;
+  --category-other-shadow: #4A4A4C;
+  --category-other-light: #999CA0;
+  
+  /* Income/Expense Indicators - Dark Mode */
+  --income-color: #30D158;
+  --income-bg: rgba(48, 209, 88, 0.15);
+  --income-border: rgba(48, 209, 88, 0.4);
+  
+  --expense-color: #FF453A;
+  --expense-bg: rgba(255, 69, 58, 0.15);
+  --expense-border: rgba(255, 69, 58, 0.4);
+  
+  /* Gradient Colors - Dark Mode */
+  --gradient-button: linear-gradient(180deg, #3A3A3C 0%, #2C2C2E 100%);
+  --gradient-button-pressed: linear-gradient(180deg, #1C1C1E 0%, #000000 100%);
+  --gradient-income: linear-gradient(180deg, #30D158 0%, #5FE084 100%);
+  --gradient-expense: linear-gradient(180deg, #FF453A 0%, #FF6961 100%);
+  --gradient-income-chart: linear-gradient(90deg, #30D158, #5FE084);
+  --gradient-expense-chart: linear-gradient(90deg, #FF453A, #FF6961);
+  
+  /* Grid & Chart Colors - Dark Mode */
+  --chart-grid: #3A3A3C;
+  --chart-background: #2C2C2E;
+  
+  /* Glass Effects - Dark Mode */
+  --glass-bg: rgba(60, 60, 63, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --glass-backdrop-blur: blur(10px);
+}
+
+
+/* ============================================
+   SKEUOMORPHIC EFFECTS & UTILITIES
+   ============================================ */
+
 /* Base */
 *,
 *::before,
@@ -58,6 +240,9 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--surface-secondary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Light theme (default) */
@@ -76,8 +261,8 @@ body {
   --gradient-primary: #023e7d;
   --gradient-accent: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
   --gradient-danger: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.3);
+  --glass-bg: rgba(245, 245, 247, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.5);
 }
 
 /* Dark theme */
@@ -96,20 +281,266 @@ body {
   --gradient-primary: linear-gradient(135deg, #818cf8 0%, #a78bfa 50%, #22d3ee 100%);
   --gradient-accent: linear-gradient(135deg, #34d399 0%, #22d3ee 100%);
   --gradient-danger: linear-gradient(135deg, #f87171 0%, #fb923c 100%);
-  --glass-bg: rgba(30, 41, 59, 0.7);
-  --glass-border: rgba(51, 65, 85, 0.5);
+  --glass-bg: rgba(28, 28, 30, 0.8);
+  --glass-border: rgba(74, 74, 76, 0.3);
 }
 
-body {
-  background-color: var(--bg-primary);
+/* ============================================
+   SKEUOMORPHIC COMPONENT STYLES
+   ============================================ */
+
+/* Card with realistic depth */
+.card-skeuomorphic {
+  background: linear-gradient(145deg, #FFFFFF, #F5F5F7);
+  box-shadow: 
+    8px 8px 16px #D1D1D6,
+    -8px -8px 16px #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+}
+
+/* Inset/Pressed effect */
+.card-inset {
+  background: linear-gradient(145deg, #E8E8ED, #FAFAFA);
+  box-shadow: 
+    inset 4px 4px 8px #D1D1D6,
+    inset -4px -4px 8px #FFFFFF;
+}
+
+/* Button with 3D effect */
+.button-3d {
+  background: linear-gradient(180deg, #FFFFFF 0%, #E8E8ED 100%);
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  border: 1px solid #D1D1D6;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  user-select: none;
+}
+
+.button-3d:hover {
+  box-shadow: 
+    0 6px 16px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transform: translateY(-1px);
+}
+
+.button-3d:active {
+  background: linear-gradient(180deg, #D1D1D6 0%, #C7C7CC 100%);
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.2),
+    0 1px 2px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+}
+
+.button-3d:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Primary button with color */
+.button-primary-3d {
+  background: linear-gradient(180deg, #007AFF 0%, #0051D5 100%);
+  box-shadow: 
+    0 4px 12px rgba(0, 122, 255, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border: none;
+  color: white;
+  font-weight: 600;
+}
+
+.button-primary-3d:hover {
+  box-shadow: 
+    0 6px 16px rgba(0, 122, 255, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.button-primary-3d:active {
+  background: linear-gradient(180deg, #0051D5 0%, #003DA8 100%);
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Success button */
+.button-success-3d {
+  background: linear-gradient(180deg, #34C759 0%, #248A3D 100%);
+  box-shadow: 
+    0 4px 12px rgba(52, 199, 89, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border: none;
+  color: white;
+  font-weight: 600;
+}
+
+/* Glossy overlay effect */
+.glossy-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.glossy-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  pointer-events: none;
+}
+
+/* Input field with skeuomorphic effect */
+.input-skeuomorphic {
+  background: linear-gradient(135deg, #F1F5F9 0%, #E2E8F0 100%);
+  box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.08), inset 0 -2px 4px rgba(255, 255, 255, 0.6);
+  border: 1px solid #E5E5EA;
+  border-radius: 12px;
+  padding: 12px 16px;
   color: var(--text-primary);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: all 0.2s ease;
+}
+
+.input-skeuomorphic:focus {
+  outline: none;
+  box-shadow: 
+    inset 0 4px 12px rgba(0, 0, 0, 0.08),
+    0 0 0 3px rgba(0, 122, 255, 0.1);
+  border-color: #007AFF;
+}
+
+.input-skeuomorphic::placeholder {
+  color: var(--text-tertiary);
+}
+
+/* ============================================
+   DARK MODE SKEUOMORPHIC COMPONENTS
+   ============================================ */
+
+/* Dark mode card */
+.dark .card-skeuomorphic {
+  background: linear-gradient(145deg, #3A3A3C, #2C2C2E);
+  box-shadow: 
+    8px 8px 16px #1C1C1E,
+    -8px -8px 16px #4A4A4C;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Dark mode inset effect */
+.dark .card-inset {
+  background: linear-gradient(145deg, #1C1C1E, #2C2C2E);
+  box-shadow: 
+    inset 4px 4px 8px #000000,
+    inset -4px -4px 8px #3A3A3C;
+}
+
+/* Dark mode 3D button */
+.dark .button-3d {
+  background: linear-gradient(180deg, #3A3A3C 0%, #2C2C2E 100%);
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border: 1px solid #1C1C1E;
+  color: var(--text-primary);
+}
+
+.dark .button-3d:hover {
+  box-shadow: 
+    0 6px 16px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.dark .button-3d:active {
+  background: linear-gradient(180deg, #1C1C1E 0%, #000000 100%);
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.6),
+    0 1px 2px rgba(0, 0, 0, 0.3);
+  transform: translateY(0);
+}
+
+/* Dark mode primary button */
+.dark .button-primary-3d {
+  background: linear-gradient(180deg, #0A84FF 0%, #0855D5 100%);
+  box-shadow: 
+    0 4px 12px rgba(10, 132, 255, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border: none;
+}
+
+.dark .button-primary-3d:hover {
+  box-shadow: 
+    0 6px 16px rgba(10, 132, 255, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.dark .button-primary-3d:active {
+  background: linear-gradient(180deg, #0855D5 0%, #063FA8 100%);
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Dark mode success button */
+.dark .button-success-3d {
+  background: linear-gradient(180deg, #30D158 0%, #27A842 100%);
+  box-shadow: 
+    0 4px 12px rgba(48, 209, 88, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border: none;
+}
+
+.dark .button-success-3d:hover {
+  box-shadow: 
+    0 6px 16px rgba(48, 209, 88, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.dark .button-success-3d:active {
+  background: linear-gradient(180deg, #27A842 0%, #1F7E32 100%);
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Dark mode glossy overlay */
+.dark .glossy-overlay::before {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+/* Dark mode input field */
+.dark .input-skeuomorphic {
+  background: linear-gradient(135deg, #3A3A3C 0%, #2C2C2E 100%);
+  box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.3), inset 0 -2px 4px rgba(255, 255, 255, 0.1);
+  border: 1px solid #1C1C1E;
+  color: var(--text-primary);
+}
+
+.dark .input-skeuomorphic:focus {
+  outline: none;
+  box-shadow: 
+    inset 0 4px 12px rgba(0, 0, 0, 0.3),
+    0 0 0 3px rgba(10, 132, 255, 0.2);
+  border-color: #0A84FF;
+}
+
+.dark .input-skeuomorphic::placeholder {
+  color: var(--text-tertiary);
 }
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -119,6 +550,7 @@ body {
 ::-webkit-scrollbar-thumb {
   background: var(--text-tertiary);
   border-radius: 100px;
+  box-shadow: 0 0 0 2px var(--surface-primary);
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -439,3 +871,25 @@ tbody tr:hover {
 .stagger > *:nth-child(6) { animation-delay: 300ms; }
 .stagger > *:nth-child(7) { animation-delay: 360ms; }
 .stagger > *:nth-child(8) { animation-delay: 420ms; }
+
+/* Small pop animation used for logout avatar/logo */
+@keyframes pop {
+  0% { transform: scale(1); }
+  35% { transform: scale(1.12); }
+  60% { transform: scale(0.98); }
+  100% { transform: scale(1); }
+}
+
+.pop {
+  animation: pop 350ms cubic-bezier(0.2, 0.9, 0.3, 1) both;
+}
+
+/* Toast for logout - subtle pop + border */
+.toast-logout {
+  border-radius: 12px !important;
+  padding: 12px 16px !important;
+  background: linear-gradient(180deg, var(--bg-secondary), var(--surface-primary)) !important;
+  color: var(--text-primary) !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
+  border: 1px solid var(--border-color) !important;
+}

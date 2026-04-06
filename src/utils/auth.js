@@ -28,3 +28,9 @@ export function setRememberedEmail(email) {
 export function clearRememberedEmail() {
   localStorage.removeItem(REMEMBER_EMAIL_KEY);
 }
+
+// Convenience helper to fully log out
+export function logout() {
+  clearAuthToken();
+  clearRememberedEmail();
+}
