@@ -156,7 +156,7 @@ export default function SignupPage() {
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
-          }}>Join FinVault</h1>
+          }}>Join fintechh</h1>
           <p style={{ color: 'var(--text-secondary)', fontWeight: '500' }}>Create your account to get started</p>
         </div>
 

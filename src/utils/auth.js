@@ -1,5 +1,5 @@
-export const AUTH_TOKEN_KEY = 'finvault-auth-token';
-export const REMEMBER_EMAIL_KEY = 'finvault-remember-email';
+export const AUTH_TOKEN_KEY = 'fintechh-auth-token';
+export const REMEMBER_EMAIL_KEY = 'fintechh-remember-email';
 
 export function getAuthToken() {
   return localStorage.getItem(AUTH_TOKEN_KEY);

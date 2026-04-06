@@ -107,7 +107,7 @@ export default function LoginPage() {
             backgroundClip: 'text',
             marginBottom: '8px'
           }}>Welcome Back</h1>
-          <p style={{ color: 'var(--text-secondary)', fontWeight: '500' }}>Sign in to your FinVault account</p>
+          <p style={{ color: 'var(--text-secondary)', fontWeight: '500' }}>Sign in to your fintechh account</p>
         </div>
 
         {/* Card */}
@@ -263,7 +263,7 @@ export default function LoginPage() {
               <span className="px-3 font-medium" style={{
                 background: 'linear-gradient(135deg, #FFFFFF 0%, #F5F5F7 100%)',
                 color: 'var(--text-secondary)'
-              }}>New to FinVault?</span>
+              }}>New to fintechh?</span>
             </div>
           </div>
 
