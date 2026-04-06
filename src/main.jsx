@@ -3,7 +3,6 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 
-// Runtime error overlay to surface uncaught errors in the UI (dev-only helper)
 function showRuntimeErrorOverlay(err) {
   try {
     let overlay = document.getElementById('__runtime_error_overlay__')
