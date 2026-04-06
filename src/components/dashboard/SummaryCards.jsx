@@ -49,7 +49,7 @@ export default function SummaryCards({ totalBalance, totalIncome, totalExpenses,
       {cardConfigs.map((config) => (
         <div
           key={config.key}
-          className="card p-5 group cursor-default"
+          className="card p-4 sm:p-5 group cursor-default"
           style={{ transition: 'transform 0.2s ease, box-shadow 0.2s ease' }}
           onMouseEnter={(e) => {
             e.currentTarget.style.transform = 'translateY(-2px)';

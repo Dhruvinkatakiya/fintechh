@@ -7,8 +7,8 @@ export default function RecentTransactions({ transactions }) {
   const navigate = useNavigate();
 
   return (
-    <div className="card p-6 animate-fade-in">
-      <div className="flex items-center justify-between mb-4">
+    <div className="card p-5 sm:p-6 animate-fade-in">
+      <div className="flex items-center justify-between mb-5">
         <div>
           <h3 className="text-base font-bold" style={{ color: 'var(--text-primary)' }}>
             Recent Transactions
@@ -25,7 +25,7 @@ export default function RecentTransactions({ transactions }) {
           View All →
         </button>
       </div>
-      <div className="space-y-4">
+      <div className="space-y-3">
         {transactions.map((txn, index) => (
           <div
             key={txn.id}

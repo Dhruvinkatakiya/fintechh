@@ -26,15 +26,15 @@ export default function SpendingDonut({ data }) {
   const total = data.reduce((sum, d) => sum + d.value, 0);
 
   return (
-    <div className="card p-6 animate-fade-in">
+    <div className="card p-5 sm:p-6 animate-fade-in">
       <h3 className="text-base font-bold mb-1" style={{ color: 'var(--text-primary)' }}>
         Spending Breakdown
       </h3>
-      <p className="text-xs mb-6" style={{ color: 'var(--text-tertiary)' }}>
+      <p className="text-xs mb-5" style={{ color: 'var(--text-tertiary)' }}>
         Expenses by category
       </p>
       <div className="flex flex-col items-center">
-        <div style={{ width: '100%', height: 240 }}>
+        <div style={{ width: '100%', height: 220 }}>
           <ResponsiveContainer>
             <PieChart>
               <Pie
@@ -57,7 +57,7 @@ export default function SpendingDonut({ data }) {
           </ResponsiveContainer>
         </div>
         {/* Legend */}
-        <div className="grid grid-cols-2 gap-x-8 gap-y-3 mt-4 w-full max-w-sm">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-3 mt-4 w-full max-w-sm">
           {data.slice(0, 6).map((item) => {
             const pct = total > 0 ? ((item.value / total) * 100).toFixed(1) : 0;
             return (

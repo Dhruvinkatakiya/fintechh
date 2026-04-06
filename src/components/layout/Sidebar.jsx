@@ -52,7 +52,7 @@ export default function Sidebar() {
         }}
       >
         {/* Logo */}
-        <div className="flex items-center justify-between px-8 h-20">
+        <div className="flex items-center justify-between px-6 h-[72px]">
           <div className="flex items-center gap-4">
             <div
               className="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold text-lg"
@@ -74,9 +74,9 @@ export default function Sidebar() {
         </div>
 
         {/* Nav */}
-        <nav className="flex-1 px-4 py-6 space-y-2">
+        <nav className="px-5 py-5 space-y-2">
           <p
-            className="text-xs font-semibold uppercase tracking-wider px-4 mb-4"
+            className="text-xs font-semibold uppercase tracking-wider px-3 mb-3"
             style={{ color: 'var(--text-tertiary)' }}
           >
             Menu
@@ -88,7 +88,7 @@ export default function Sidebar() {
                 key={item.to}
                 to={item.to}
                 onClick={closeSidebar}
-                className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200"
+                className="flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium transition-all duration-200"
                 style={{
                   background: isActive ? 'var(--gradient-primary)' : 'transparent',
                   color: isActive ? 'white' : 'var(--text-secondary)',
@@ -115,7 +115,7 @@ export default function Sidebar() {
         </nav>
 
         {/* Bottom section */}
-        <div className="px-4 pb-6 space-y-4">
+        <div className="mt-auto px-5 pt-4 pb-5 space-y-4" style={{ borderTop: '1px solid var(--border-color)' }}>
           {/* Theme switcher */}
           <div>
             <p

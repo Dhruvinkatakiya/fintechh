@@ -44,9 +44,9 @@
 }
 
 /* Base */
-* {
-  margin: 0;
-  padding: 0;
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -416,6 +416,14 @@ tbody tr:hover {
   border: 1px solid var(--border-color) !important;
   border-radius: 12px !important;
   box-shadow: var(--shadow-lg) !important;
+}
+
+/* Remove focus ring around charts on click */
+.recharts-wrapper:focus,
+.recharts-wrapper:focus-visible,
+.recharts-surface:focus,
+.recharts-surface:focus-visible {
+  outline: none !important;
 }
 
 /* Staggered animation helper */

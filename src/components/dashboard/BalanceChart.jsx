@@ -25,14 +25,14 @@ function CustomTooltip({ active, payload, label }) {
 
 export default function BalanceChart({ data }) {
   return (
-    <div className="card p-6 animate-fade-in">
+    <div className="card p-5 sm:p-6 animate-fade-in">
       <h3 className="text-base font-bold mb-1" style={{ color: 'var(--text-primary)' }}>
         Balance Trend
       </h3>
-      <p className="text-xs mb-6" style={{ color: 'var(--text-tertiary)' }}>
+      <p className="text-xs mb-5" style={{ color: 'var(--text-tertiary)' }}>
         Income vs Expenses over the last 6 months
       </p>
-      <div style={{ height: 320 }}>
+      <div style={{ height: 300 }}>
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={data} margin={{ top: 5, right: 10, left: -10, bottom: 0 }}>
             <defs>
