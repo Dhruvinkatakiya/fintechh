@@ -54,12 +54,12 @@ export default function Sidebar() {
         {/* Logo */}
         <div className="flex items-center justify-between px-6 h-[72px]">
           <div className="flex items-center gap-4">
-            <div
+            {/* <div
               className="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold text-lg"
               style={{ background: 'var(--gradient-primary)' }}
             >
               F
-            </div>
+            </div> */}
             <span className="text-lg font-bold" style={{ color: 'var(--text-primary)' }}>
               fintechh
             </span>
