@@ -50,7 +50,7 @@ export default function TransactionsPage() {
       Type: t.type,
       Amount: t.amount,
     }));
-    exportToCSV(rows, 'finvault-transactions');
+    exportToCSV(rows, 'fintechh-transactions');
     toast.success('CSV exported!');
   };
 

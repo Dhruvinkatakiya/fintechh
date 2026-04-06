@@ -61,7 +61,7 @@ export default function Sidebar() {
               F
             </div>
             <span className="text-lg font-bold" style={{ color: 'var(--text-primary)' }}>
-              FinVault
+              fintechh
             </span>
           </div>
           <button

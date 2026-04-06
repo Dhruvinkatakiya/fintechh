@@ -37,7 +37,7 @@ export const useTransactionStore = create(
       },
     }),
     {
-      name: 'finvault-transactions',
+      name: 'fintechh-transactions',
     }
   )
 );
@@ -60,7 +60,7 @@ export const useAppStore = create(
       closeSidebar: () => set({ sidebarOpen: false }),
     }),
     {
-      name: 'finvault-settings',
+      name: 'fintechh-settings',
     }
   )
 );
