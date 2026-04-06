@@ -1,7 +1,8 @@
+import { lazy, Suspense } from 'react';
 import { useDashboardData } from '../../hooks/useDashboardData';
 import SummaryCards from '../../components/dashboard/SummaryCards';
-import BalanceChart from '../../components/dashboard/BalanceChart';
-import SpendingDonut from '../../components/dashboard/SpendingDonut';
+const BalanceChart = lazy(() => import('../../components/dashboard/BalanceChart'));
+const SpendingDonut = lazy(() => import('../../components/dashboard/SpendingDonut'));
 import RecentTransactions from '../../components/dashboard/RecentTransactions';
 
 export default function DashboardPage() {
@@ -25,10 +26,14 @@ export default function DashboardPage() {
       />
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
         <div className="lg:col-span-3">
-          <BalanceChart data={balanceTrend} />
+          <Suspense fallback={<div className="h-64 bg-gray-100 animate-pulse rounded-xl" />}>
+            <BalanceChart data={balanceTrend} />
+          </Suspense>
         </div>
         <div className="lg:col-span-2">
-          <SpendingDonut data={spendingByCategory} />
+          <Suspense fallback={<div className="h-64 bg-gray-100 animate-pulse rounded-xl" />}>
+            <SpendingDonut data={spendingByCategory} />
+          </Suspense>
         </div>
       </div>
       <RecentTransactions transactions={recentTransactions} />

@@ -1,15 +1,16 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-import { useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import Layout from './components/layout/Layout';
-import DashboardPage from './pages/Dashboard';
-import TransactionsPage from './pages/Transactions';
-import InsightsPage from './pages/Insights';
-import LoginPage from './pages/Login';
-import SignupPage from './pages/Signup';
+const DashboardPage = lazy(() => import('./pages/Dashboard'));
+const TransactionsPage = lazy(() => import('./pages/Transactions'));
+const InsightsPage = lazy(() => import('./pages/Insights'));
+const LoginPage = lazy(() => import('./pages/Login'));
+const SignupPage = lazy(() => import('./pages/Signup'));
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import PublicOnlyRoute from './components/auth/PublicOnlyRoute';
 import { useAppStore, applyTheme } from './store';
+import LoadingSpinner from './components/ui/LoadingSpinner';
 
 export default function App() {
   const theme = useAppStore((s) => s.theme);
@@ -29,7 +30,8 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <Routes>
+      <Suspense fallback={<LoadingSpinner />}>
+        <Routes>
         {/* Public Routes - Only accessible when not authenticated */}
         <Route element={<PublicOnlyRoute />}>
           <Route path="/login" element={<LoginPage />} />
@@ -50,7 +52,8 @@ export default function App() {
 
         {/* 404 fallback */}
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
-      </Routes>
+        </Routes>
+      </Suspense>
       <Toaster
         position="bottom-right"
         toastOptions={{
